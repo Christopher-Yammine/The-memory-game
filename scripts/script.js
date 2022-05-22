@@ -14,7 +14,8 @@ var wrongAudio = new Audio('./assets/sounds/wrong.mp3');
 
 //let maxlevel=parseInt(window.prompt("Enter the number of levels please")) ;
 
-var maxlevel = 10;
+var maxlevel = window.prompt("input number of levels");
+
 var pattern=[];
 var flagStarted=false;
 var square=0;
@@ -99,17 +100,10 @@ function startSequence(){
     levelCounter=0;
    
 }
-greensquare.addEventListener("click",greenClicked);
-redsquare.addEventListener("click",redClicked);
-bluesquare.addEventListener("click",blueClicked);
-yellowsquare.addEventListener("click",yellowClicked);
-document.addEventListener("keypress", startSequence);
+
 
 
 function greenClicked (){
-    console.log("greenclicked");
-    console.log("seq",sequence);
-    console.log("pat",pattern);
     clickGreen();
     sequence.push(1);
     for (var i=0;i<sequence.length;i++){
@@ -130,8 +124,6 @@ function greenClicked (){
     }
 }
 function redClicked (){
-    console.log("seq",sequence);
-    console.log("pat",pattern);
     clickRed();
     sequence.push(2);
     for (var i=0;i<sequence.length;i++){
@@ -151,8 +143,6 @@ function redClicked (){
     }
 }
 function blueClicked (){
-    console.log("seq",sequence);
-    console.log("pat",pattern);
     clickBlue();
     sequence.push(3);
     for (var i=0;i<sequence.length;i++){
@@ -172,8 +162,6 @@ function blueClicked (){
     }
 }
 function yellowClicked (){
-    console.log("seq",sequence);
-    console.log("pat",pattern);
     clickYellow();
     sequence.push(4);
     for (var i=0;i<sequence.length;i++){
@@ -193,6 +181,11 @@ function yellowClicked (){
     }
 }
 
+greensquare.addEventListener("click",greenClicked);
+redsquare.addEventListener("click",redClicked);
+bluesquare.addEventListener("click",blueClicked);
+yellowsquare.addEventListener("click",yellowClicked);
+document.addEventListener("keypress", startSequence,{once:true});
 
 
 
